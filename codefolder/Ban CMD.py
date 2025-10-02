@@ -96,3 +96,10 @@ if __name__ == "__main__":
     if TOKEN == "MTQyMzI5Nzc2NjU4MjY1Mjk1OA.GI-lwI.KifEzYYV3LUzLmDI0ccg8jfNUzGZuU-KM5X3oQ":
         print("⚠️ Replace the token or use the DISCORD_BOT_TOKEN environment variable.")
     bot.run(TOKEN)
+@bot.tree.command(name="start", description="Start the bot or check if it's working.")
+async def start_command(interaction: discord.Interaction):
+    user = interaction.user
+    await interaction.response.send_message(
+        f"👋 Hello, {user.mention}! The bot is online and ready to go.",
+        ephemeral=True
+    )
